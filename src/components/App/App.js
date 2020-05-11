@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 
-
-import Home from '../Home/Home'
+import SignIn from '../SignIn/SignIn'
 import AreasContainer from '../AreasContainer/AreasContainer'
 import ListingsContainer from '../ListingsContainer/ListingsContainer'
 import Favorites from '../Favorites/Favorites'
+import Header from '../Header/Header'
 
 class App extends React.Component {
-  construct() {
+  constructor() {
     super()
     this.state = {
 
@@ -18,7 +18,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        
+        <Header />
+        <SignIn />
       </div>
     );
   }
