@@ -1,15 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './ListingsContainer.css'
+import React from "react";
+import PropTypes from "prop-types";
+import "./ListingsContainer.css";
 const ListingsContainer = (props) => {
+  return <p>Hello World!</p>;
+};
 
-    return (
-        <p>Hello World!</p>
-    )
-}
+export default ListingsContainer;
 
-export default ListingsContainer
-
-ListingsContainer.propTypes = {
-
-}
+ListingsContainer.propTypes = {};
