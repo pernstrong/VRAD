@@ -1,13 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './Favorites.css'
+import React from "react";
+import PropTypes from "prop-types";
+import "./Favorites.css";
 
-const Favorites = (props) => {
+const Favorites = (props) => {};
 
-}
+export default Favorites;
 
-export default Favorites
-
-Favorites.propTypes = {
-
-}
+Favorites.propTypes = {};

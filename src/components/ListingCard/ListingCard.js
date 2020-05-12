@@ -1,13 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './ListingCard.css'
+import React from "react";
+import PropTypes from "prop-types";
+import "./ListingCard.css";
 
-const ListingCard = (props) => {
+const ListingCard = (props) => {};
 
-}
+export default ListingCard;
 
-export default ListingCard
-
-ListingCard.propTypes = {
-
-}
+ListingCard.propTypes = {};
