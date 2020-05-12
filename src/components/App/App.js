@@ -19,6 +19,7 @@ class App extends React.Component {
     this.setState({user: newUser})
     console.log(this.state.user)
   }
+  
   render() {
     return (
       <div className="App">
