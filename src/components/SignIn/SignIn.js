@@ -1,9 +1,10 @@
 import React from 'react'
+import './SignIn.css'
 import PropTypes from 'prop-types'
 
 class SignIn extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             name: '',
             email: '',
@@ -14,18 +15,17 @@ class SignIn extends React.Component {
     handleChange = event => {
         const { name, value } = event.target
         this.setState({[name]: value})
-        console.log(this.state)
     }
 
     handleClick = () => {
-        
+        this.props.setUser(this.state)
     }
 
 
     render() {
 
         return(
-            <section>
+            <section className='signIn-form'>
                 <h3>Welcome, please sign in:</h3>
                 <input
                     type='text'
@@ -51,7 +51,7 @@ class SignIn extends React.Component {
                     <option value='fugitive'>Fugitive on the Run</option>
                  </select>
 
-                 <button onClick={this.handleClick}>Sign In</button>
+                 <button className='signIn-btn' onClick={this.handleClick}>Sign In</button>
 
             </section>
         )
