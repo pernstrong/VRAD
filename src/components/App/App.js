@@ -17,8 +17,8 @@ class App extends React.Component {
   }
 
   setUser = newUser => {
+    console.log(newUser)
     this.setState({user: newUser})
-    console.log(this.state.user)
   }
 
   componentDidMount() {
@@ -42,30 +42,12 @@ componentDidUpdate() {
   console.log(this.state.areas)
 }
 
-//   handleApiData = (data) => {
-//     const promises = data.areas.map(area => {
-//       let url = `https://vrad-api.herokuapp.com${area.details}`
-//       fetch(url)
-//       .then(response => response.json())
-//       .then(data => data)
-//       .catch(err => console.error(err))  
-//       return   
-//     })
-// ``
-//   }
-
-  fetchAreaDetails = (url) => {
-    // fetch(url)
-    // .then(response => response.json())
-    // .then(data => console.log(data))
-    // .catch(err => console.error(err))
-  }
-
   render() {
     return (
       <div className="App">
         <Header userName={this.state.user.name} />
         <SignIn setUser={this.setUser}/>
+        <AreasContainer areas={this.state.areas}/>
       </div>
     );
   }
