@@ -8,7 +8,8 @@ class SignIn extends React.Component {
         this.state = {
             name: '',
             email: '',
-            purpose: ''
+            purpose: '',
+            error: false
         }
     }
 
@@ -17,10 +18,13 @@ class SignIn extends React.Component {
         this.setState({[name]: value})
     }
 
-    handleClick = () => {
-        this.props.setUser(this.state)
+    handleClick = () => { 
+    this.handleInputError() ? this.props.setUser(this.state) : this.setState({error: true})
     }
 
+    handleInputError = () => {
+        return !this.state.name === '' || !this.state.email === '' || !this.state.purpose === ''
+    }
 
     render() {
 
@@ -50,7 +54,7 @@ class SignIn extends React.Component {
                     <option value='vacation'>Vacation</option>
                     <option value='fugitive'>Fugitive on the Run</option>
                  </select>
-
+                {this.state.error && <p>Please fill out all inputs to sign in.</p>}
                  <button className='signIn-btn' onClick={this.handleClick}>Sign In</button>
 
             </section>
