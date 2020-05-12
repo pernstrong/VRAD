@@ -19,11 +19,13 @@ class SignIn extends React.Component {
     }
 
     handleClick = () => { 
-    this.handleInputError() ? this.props.setUser(this.state) : this.setState({error: true})
+        console.log(this.state)
+        console.log(this.handleInputError())
+    this.handleInputError() ? this.props.setUser({name: this.state.name, email: this.state.email, purpose: this.state.purpose}) : this.setState({error: true})
     }
 
     handleInputError = () => {
-        return !this.state.name === '' || !this.state.email === '' || !this.state.purpose === ''
+        return (this.state.name !== '' || this.state.email !== '' || this.state.purpose !== '')
     }
 
     render() {
