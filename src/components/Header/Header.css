@@ -1,8 +1,9 @@
 header {
-    border: 1px solid red;
+    background-color: lightgray;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     /* width: 100%; */
+    padding-bottom: 1%
 }
 
 h1 {
@@ -10,15 +11,59 @@ h1 {
     margin-bottom: 0;
     display: inline-block;
     grid-column: 1 / 2;
+    grid-row: 1;
+    margin-left: 2%;
 }
 
 .accronym {
-    margin-top: 0;
+    margin-top: -50px;
     display: inline-block;
+    grid-column: 1 / 2;
+    grid-row: 2;
+    margin-left: 3%;
+
+}
+
+.message-section {
+ grid-column: 3 / 4;
+ grid-row: 1;
+ margin-top: 0; 
+ display: grid;
+ grid-template-columns: 1fr 1fr;  
+}
+
+.welcome-message {
+    display: inline-block;
+    grid-column: 2 / 3;
+    font-size: 5vh;
+}
+
+.guest-details {
     grid-column: 1 / 2;
 }
 
-.user-message {
-    display: inline-block;
-    grid-column: 3 / 4;
+.guest-details h4 {
+    font-size: 3vh;
+    margin-bottom: 0;
+
+}
+.guest-details p {
+    font-size: 3vh;
+    margin: 2%;
+
+}
+
+.button-section {
+    grid-column: 2 / 3;
+    margin: 5% 0 0 15%
+}
+
+.button-section button {
+    display: block;
+    font-size: 3vh;
+    padding: 2%;
+    margin: 5% auto;
+    border-radius: 10px;
+    cursor: pointer;
+    
 }
