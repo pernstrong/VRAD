@@ -10,24 +10,16 @@ class SignIn extends React.Component {
       name: "",
       email: "",
       purpose: "",
-      errorMsg: "",
-    //   error: false,
-    //   signInRoute: '/',
-    //   isInputValid: false
+      errorMsg: ""
     };
   }
 
   handleChange = (event) => {
     const { name, value } = event.target;
-    // if (this.checkInputs()) {
-    //     this.setState({ [name]: value, isInputValid: true });
-    // } else {
         this.setState({[name]: value})
-    // }
   };
 
   handleClick = (event) => {
-    console.log(this.checkInputs())
     this.checkInputs()
       ? this.props.setUser({
           name: this.state.name,
@@ -37,30 +29,9 @@ class SignIn extends React.Component {
       : this.setState({ errorMsg: <p>Please fill in all inputs</p> });
   };
 
-  componentDidUpdate() {
-  }
-
-//   handleClick = () => {
-//     this.handleInputError()
-//       ? this.props.setUser({
-//           name: this.state.name,
-//           email: this.state.email,
-//           purpose: this.state.purpose,
-//         })
-//       : this.setState({ isInputValid: true });
-//   };
-
   checkInputs = () => {
      return (this.state.name !== '' && this.state.email !== '' && this.state.purpose !== '') 
   };
-
-//   handleInputError = () => {
-//     return (
-//       this.state.name !== "" &&
-//       this.state.email !== "" &&
-//       this.state.purpose !== ""
-//     );
-//   };
 
   render() {
     return (

@@ -21,6 +21,10 @@ class App extends React.Component {
     this.setState({ user: newUser });
   };
 
+  resetUser = () => {
+    this.setState({ user: "" });
+  };
+
   // dave thinking....maybe add the listings fetch nested under the areas in componentDidMount ? Would this be better than using componentDidUpdate to call once the area is selected like we talked about??
   // then in the render have a listings container that gets routed to. <listingsContainer path=''> ?
   // then would we store the current area here? but then you would have to also store the current listing and the favorites...is that too much? It does reduce the need for more class base components and keeps the data centralized. It also follows our wireframe. Maybe let's try it...
@@ -41,12 +45,12 @@ class App extends React.Component {
       })
       .then((resolvedData) => this.setState({ areas: resolvedData }))
       .catch((err) => console.error(err));
-  }wha
+  }
 
   render() {
     return (
       <div className="App">
-        <Header user={this.state.user} />
+        <Header user={this.state.user} resetUser={this.resetUser} />
         <Route
           path="/"
           exact
