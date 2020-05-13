@@ -1,6 +1,6 @@
 import React from "react";
 import "./SignIn.css";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -32,8 +32,8 @@ class SignIn extends React.Component {
 
   handleInputError = () => {
     return (
-      this.state.name !== "" ||
-      this.state.email !== "" ||
+      this.state.name !== "" &&
+      this.state.email !== "" &&
       this.state.purpose !== ""
     );
   };
@@ -42,7 +42,7 @@ class SignIn extends React.Component {
     return (
       <section className="signIn-form">
         <h2>Welcome, please sign in:</h2>
-        <label for="name">Enter your name</label>
+        <label htmlFor="name">Enter your name</label>
         <input
           type="text"
           name="name"
@@ -51,7 +51,7 @@ class SignIn extends React.Component {
           value={this.state.name}
           onChange={this.handleChange}
         />
-        <label for="email">Enter your email</label>
+        <label htmlFor="email">Enter your email</label>
         <input
           type="text"
           name="email"
@@ -60,7 +60,7 @@ class SignIn extends React.Component {
           value={this.state.email}
           onChange={this.handleChange}
         />
-        <label for="purpose">Why are you visiting?</label>
+        <label htmlFor="purpose">Why are you visiting?</label>
         <select name="purpose" id="purpose" onChange={this.handleChange}>
           <option value="">-- Please choose a purpose --</option>
           <option value="business">Business</option>
