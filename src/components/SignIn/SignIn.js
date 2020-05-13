@@ -1,6 +1,6 @@
 import React from "react";
 import "./SignIn.css";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 // import PropTypes from "prop-types";
 
 class SignIn extends React.Component {
@@ -10,13 +10,13 @@ class SignIn extends React.Component {
       name: "",
       email: "",
       purpose: "",
-      errorMsg: ""
+      errorMsg: "",
     };
   }
 
   handleChange = (event) => {
     const { name, value } = event.target;
-        this.setState({[name]: value})
+    this.setState({ [name]: value });
   };
 
   handleClick = (event) => {
@@ -30,14 +30,18 @@ class SignIn extends React.Component {
   };
 
   checkInputs = () => {
-     return (this.state.name !== '' && this.state.email !== '' && this.state.purpose !== '') 
+    return (
+      this.state.name !== "" &&
+      this.state.email !== "" &&
+      this.state.purpose !== ""
+    );
   };
 
   render() {
     return (
       <section className="signIn-form">
-        <h2>Welcome, please sign in:</h2>
-        <label htmlFor="name">Enter your name</label>
+        <h2>Welcome, please sign in!</h2>
+        <label htmlFor="name">Enter your name:</label>
         <input
           type="text"
           name="name"
@@ -46,7 +50,7 @@ class SignIn extends React.Component {
           value={this.state.name}
           onChange={this.handleChange}
         />
-        <label htmlFor="email">Enter your email</label>
+        <label htmlFor="email">Enter your email:</label>
         <input
           type="text"
           name="email"
@@ -63,11 +67,11 @@ class SignIn extends React.Component {
           <option value="fugitive">Fugitive on the Run</option>
         </select>
         {this.state.errorMsg}
-       <Link to={this.checkInputs() ? '/areas' : '/' }>
-       <button className="signIn-btn" onClick={this.handleClick}>
-          Sign In
-        </button>
-       </Link> 
+        <Link to={this.checkInputs() ? "/areas" : "/"}>
+          <button className="signIn-btn" onClick={this.handleClick}>
+            Sign In
+          </button>
+        </Link>
       </section>
     );
   }
