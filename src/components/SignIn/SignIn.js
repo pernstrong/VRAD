@@ -1,5 +1,6 @@
 import React from "react";
 import "./SignIn.css";
+import { Link } from 'react-router-dom'
 // import PropTypes from "prop-types";
 
 class SignIn extends React.Component {
@@ -9,33 +10,27 @@ class SignIn extends React.Component {
       name: "",
       email: "",
       purpose: "",
-      error: false,
+      errorMsg: ""
     };
   }
 
   handleChange = (event) => {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+        this.setState({[name]: value})
   };
 
-  handleClick = () => {
-    console.log(this.state);
-    console.log(this.handleInputError());
-    this.handleInputError()
+  handleClick = (event) => {
+    this.checkInputs()
       ? this.props.setUser({
           name: this.state.name,
           email: this.state.email,
           purpose: this.state.purpose,
         })
-      : this.setState({ error: true });
+      : this.setState({ errorMsg: <p>Please fill in all inputs</p> });
   };
 
-  handleInputError = () => {
-    return (
-      this.state.name !== "" &&
-      this.state.email !== "" &&
-      this.state.purpose !== ""
-    );
+  checkInputs = () => {
+     return (this.state.name !== '' && this.state.email !== '' && this.state.purpose !== '') 
   };
 
   render() {
@@ -67,10 +62,12 @@ class SignIn extends React.Component {
           <option value="vacation">Vacation</option>
           <option value="fugitive">Fugitive on the Run</option>
         </select>
-        {this.state.error && <p>Please fill out all inputs to sign in.</p>}
-        <button className="signIn-btn" onClick={this.handleClick}>
+        {this.state.errorMsg}
+       <Link to={this.checkInputs() ? '/areas' : '/' }>
+       <button className="signIn-btn" onClick={this.handleClick}>
           Sign In
         </button>
+       </Link> 
       </section>
     );
   }
