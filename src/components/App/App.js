@@ -19,11 +19,16 @@ class App extends React.Component {
 
   setUser = (newUser) => {
     this.setState({ user: newUser });
+    this.fetchListings()
   };
 
   resetUser = () => {
     this.setState({ user: "" });
   };
+
+  fetchListings = () => {
+    fetch()
+  }
 
   // dave thinking....maybe add the listings fetch nested under the areas in componentDidMount ? Would this be better than using componentDidUpdate to call once the area is selected like we talked about??
   // then in the render have a listings container that gets routed to. <listingsContainer path=''> ?
