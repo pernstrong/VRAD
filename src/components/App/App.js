@@ -19,7 +19,8 @@ class App extends React.Component {
       user: "",
       areas: [],
       listings: [],
-      currentArea: ''
+      currentArea: '',
+      currentListing: ''
     };
   }
 
@@ -34,6 +35,11 @@ class App extends React.Component {
 
   setCurrentArea = (area) => {
     this.setState({currentArea: area})
+  }
+
+  setCurrentListing = (listingId) => {
+    console.log(listingId)
+    this.setState({currentListing: listingId})
   }
 
 
@@ -85,10 +91,10 @@ class App extends React.Component {
           }}
         />
         <Route
-          path={`/listings/${this.state.currentArea}`}
+          path={`/areas/${this.state.currentArea}`}
           exact
           render={() => {
-            return <ListingsContainer listings={this.state.currentArea !== '' ? this.state.listings[this.state.currentArea] : []} />
+            return <ListingsContainer listings={this.state.currentArea !== '' ? this.state.listings[this.state.currentArea] : []} setCurrentListing={this.setCurrentListing}/>
           }}
         />
       </div>

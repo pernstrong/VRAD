@@ -3,9 +3,22 @@ import React from "react";
 import "./ListingCard.css";
 import { Link } from 'react-router-dom'
 
+
+
 const ListingCard = (props) => {
+    console.log(props)
+    const imagePath = `./././public/images/${props.listing_id}_a.jpg`
     return (
-        <p>{props.name}</p>
+        <section>
+
+            <h2>{props.name}</h2>
+            <img src={`${imagePath}`} alt={props.name} />
+
+            <Link to={`/listings/${props.listing_id}`} >
+                <button onClick={() => props.setCurrentListing(props.listing_id)}>Listing Details</button>
+            </Link>
+
+        </section>
         
     )
 };

@@ -7,7 +7,7 @@ import { Route } from 'react-router-dom'
 const AreasContainer = (props) => {
 
   const areas = props.areas.map((area) => {
-    return (<Route to={`/listings/${area.id}`}
+    return (<Route to={`/areas/${area.id}`}
     render={() =>  <AreaCard {...area} setCurrentArea={props.setCurrentArea} />} key={area.name}
     />)
   })
