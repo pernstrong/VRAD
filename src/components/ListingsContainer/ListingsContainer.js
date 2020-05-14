@@ -5,7 +5,6 @@ import ListingCard from "../ListingCard/ListingCard"
 import { Route } from 'react-router-dom'
 
 const ListingsContainer = (props) => {
-  console.log(props)
   const listings = props.listings.map(listing => {
     return <ListingCard key={listing.listing_id} {...listing}/> 
   })
