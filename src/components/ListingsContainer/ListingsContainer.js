@@ -6,7 +6,7 @@ import { Route } from 'react-router-dom'
 
 const ListingsContainer = (props) => {
   const listings = props.listings.map(listing => {
-    return <ListingCard key={listing.listing_id} {...listing}/> 
+    return <ListingCard key={listing.listing_id} {...listing} setCurrentListing={props.setCurrentListing}/> 
   })
 
   return <section className="listings-container">{listings}</section>
