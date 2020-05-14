@@ -1,9 +1,7 @@
 import React from "react";
 // import PropTypes from "prop-types";
 import "./ListingCard.css";
-import { Link } from 'react-router-dom'
-
-
+import { Link } from "react-router-dom";
 
 const ListingCard = (props) => {
         const imagePath = `/images/${props.listing_id}_a.jpg`
