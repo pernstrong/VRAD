@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom'
 
 
 const ListingCard = (props) => {
-    console.log(props)
-    const imagePath = `./././public/images/${props.listing_id}_a.jpg`
+        const imagePath = `/images/${props.listing_id}_a.jpg`
     return (
         <section>
 
