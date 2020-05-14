@@ -5,7 +5,7 @@ import "./AreasContainer.css";
 
 const AreasContainer = (props) => {
   const areas = props.areas.map((area) => {
-    return <AreaCard key={area.name} {...area} />;
+    return <AreaCard key={area.name} {...area} setCurrentArea={props.setCurrentArea} />;
   });
 
   return <section className="areas-container">{areas}</section>;

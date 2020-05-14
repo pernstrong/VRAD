@@ -1,14 +1,18 @@
 import React from "react";
 // import PropTypes from "prop-types";
 import "./AreaCard.css";
+import { Link } from 'react-router-dom'
 
-const AreaCard = ({ id, name, location, about }) => {
+const AreaCard = (props) => {
+  const { id, name, location, about } = props
   return (
     <section className="area-card" data-id={id}>
       <h2>{name}</h2>
       <h3>{location}</h3>
       <p>{about}</p>
-      <button>View Listings</button>
+      <Link to='/listings'>
+         <button onClick={() => props.setCurrentArea(id)}>View Listings</button>
+      </Link>
     </section>
   );
 };
