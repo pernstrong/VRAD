@@ -21,6 +21,7 @@ class App extends React.Component {
       listings: [],
       currentArea: "",
       currentListing: "",
+      favorites: [],
     };
   }
 
@@ -38,9 +39,20 @@ class App extends React.Component {
   };
 
   setCurrentListing = (listingId) => {
-    console.log(listingId);
     this.setState({ currentListing: listingId });
   };
+
+  saveToFavorites = (listingId) => {
+    const newFavorite = this.state.listings[this.state.currentArea].find(
+      (listing) => listing.listing_id === listingId
+    );
+    this.setState({ favorites: [...this.state.favorites, newFavorite] });
+  };
+
+  removeFromFavorites = (listingId) => {
+    const newFavorites = this.state.favorites.filter(favorite => favorite.listing_id !== listingId)
+    this.setState({favorites: newFavorites})
+  }
 
   fetchListings = () => {
     fetch("https://vrad-api.herokuapp.com/api/v1/listings/")
@@ -117,11 +129,14 @@ class App extends React.Component {
           path={`/listings/${this.state.currentListing}`}
           exact
           render={() => {
+            const currentListing = this.state.listings[
+              this.state.currentArea
+            ].find(
+              (listing) => listing.listing_id === this.state.currentListing
+            );
             return (
               <ListingDetails
-                details={this.state.listings[this.state.currentArea].find(
-                  (listing) => listing.listing_id === this.state.currentListing
-                )}
+                details={currentListing} saveToFavorites={this.saveToFavorites} removeFromFavorites={this.removeFromFavorites}
               />
             );
           }}
