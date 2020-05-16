@@ -1,7 +1,7 @@
 import React from "react";
 import "./SignIn.css";
 import { Link } from "react-router-dom";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -79,4 +79,6 @@ class SignIn extends React.Component {
 
 export default SignIn;
 
-SignIn.propTypes = {};
+SignIn.propTypes = {
+  setUser: PropTypes.func.isRequired,
+};

@@ -1,15 +1,15 @@
 import React from "react";
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter as Router } from "react-router-dom";
 import { render, fireEvent } from "@testing-library/react";
-import SignIn from "./SignIn";
 import "@testing-library/jest-dom/extend-expect";
+import SignIn from "./SignIn";
 
 describe("SignIn", () => {
   it("should render sign in form", () => {
     const { getByText, getByLabelText } = render(
-      <MemoryRouter>
+      <Router>
         <SignIn />
-      </MemoryRouter>
+      </Router>
     );
     expect(getByText("Welcome, please sign in!")).toBeInTheDocument();
     expect(getByLabelText("Enter your name:")).toBeInTheDocument();
@@ -19,9 +19,9 @@ describe("SignIn", () => {
 
   it("should render error message if missing input", () => {
     const { getByText, getByLabelText, getByPlaceholderText } = render(
-      <MemoryRouter>
+      <Router>
         <SignIn />
-      </MemoryRouter>
+      </Router>
     );
     fireEvent.change(getByPlaceholderText("Your name"), {
       target: { value: "" },
@@ -39,9 +39,9 @@ describe("SignIn", () => {
   it("should run setUser if all inputs are filled in", () => {
     const mockSetUser = jest.fn();
     const { getByText, getByPlaceholderText, getByLabelText } = render(
-      <MemoryRouter>
+      <Router>
         <SignIn setUser={mockSetUser} />
-      </MemoryRouter>
+      </Router>
     );
     fireEvent.change(getByPlaceholderText("Your name"), {
       target: { value: "Foxy Meatball" },
