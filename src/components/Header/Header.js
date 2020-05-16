@@ -16,7 +16,9 @@ const Header = (props) => {
           <Link to="/">
             <button onClick={() => props.resetUser()}>Sign Out</button>
           </Link>
-          <button>My Favorites</button>
+          <Link to="/favorites">
+            <button>My Favorites ({props.numberOfFavorites})</button>
+          </Link>
         </section>
       </section>
     );
