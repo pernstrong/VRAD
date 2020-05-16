@@ -14,15 +14,16 @@ const ListingDetails = (props) => {
     <section>
       <h2>{name}</h2>
       <p>
-        {address.street} {address.street}
+        {address.street} {address.zip} Denver, CO
       </p>
       <h3>Details</h3>
       <p>Bedrooms: {details.beds}</p>
       <p>Bathrooms: {details.baths}</p>
-      <p>Cost per Night: {details.cost_per_night}</p>
+      <p>Cost per Night: ${details.cost_per_night}</p>
       <ul>
         {details.features.map((feature) => {
-          return <li>{feature}</li>;
+          return (
+            <li key={feature}>{feature} </li>);
         })}
       </ul>
       <img src={`${imagePathA}`} alt={props.name} />
