@@ -7,6 +7,7 @@ import ListingsContainer from "../ListingsContainer/ListingsContainer";
 // import Favorites from "../Favorites/Favorites";
 import Header from "../Header/Header";
 import ListingDetails from "../ListingDetails/ListingDetails";
+import Favorites from "../Favorites/Favorites";
 import { Route } from "react-router-dom";
 
 // this.state will probably need: user, areas, currentArea/currentListings(in order to pass down to the listingsContainer to display the correct listings for each area), selectedListing(for all the details), favorites. maybe an allListings array...i'm thinking this would be the easiest way to fetch and then store the data...otherwise we could add a key to the areas objects that holds all the listings but that might get tricky. allListings could then be iterated over to match area_ids in order to display the correct ones for each area?
@@ -21,6 +22,7 @@ class App extends React.Component {
       listings: [],
       currentArea: "",
       currentListing: "",
+      favorites: [],
     };
   }
 
@@ -38,8 +40,21 @@ class App extends React.Component {
   };
 
   setCurrentListing = (listingId) => {
-    console.log(listingId);
     this.setState({ currentListing: listingId });
+  };
+
+  saveToFavorites = (listingId) => {
+    const newFavorite = this.state.listings[this.state.currentArea].find(
+      (listing) => listing.listing_id === listingId
+    );
+    this.setState({ favorites: [...this.state.favorites, newFavorite] });
+  };
+
+  removeFromFavorites = (listingId) => {
+    const newFavorites = this.state.favorites.filter(
+      (favorite) => favorite.listing_id !== listingId
+    );
+    this.setState({ favorites: newFavorites });
   };
 
   fetchListings = () => {
@@ -77,7 +92,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header user={this.state.user} resetUser={this.resetUser} />
+        <Header
+          user={this.state.user}
+          resetUser={this.resetUser}
+          numberOfFavorites={this.state.favorites.length}
+        />
         <Route
           path="/"
           exact
@@ -117,11 +136,28 @@ class App extends React.Component {
           path={`/listings/${this.state.currentListing}`}
           exact
           render={() => {
+            const currentListing = this.state.listings[
+              this.state.currentArea
+            ].find(
+              (listing) => listing.listing_id === this.state.currentListing
+            );
             return (
               <ListingDetails
-                details={this.state.listings[this.state.currentArea].find(
-                  (listing) => listing.listing_id === this.state.currentListing
-                )}
+                details={currentListing}
+                saveToFavorites={this.saveToFavorites}
+                removeFromFavorites={this.removeFromFavorites}
+              />
+            );
+          }}
+        />
+        <Route
+          path={"/favorites"}
+          exact
+          render={() => {
+            return (
+              <Favorites
+                favorites={this.state.favorites}
+                setCurrentListing={this.setCurrentListing}
               />
             );
           }}
