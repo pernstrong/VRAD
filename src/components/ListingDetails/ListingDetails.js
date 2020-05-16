@@ -3,13 +3,11 @@ import React from "react";
 import "./ListingDetails.css";
 
 const ListingDetails = (props) => {
-  console.log(props);
-
   const { name, address, details } = props.details;
   const imagePathA = `/images/${props.details.listing_id}_a.jpg`;
   const imagePathB = `/images/${props.details.listing_id}_b.jpg`;
   const imagePathC = `/images/${props.details.listing_id}_c.jpg`;
-  
+
   return (
     <section>
       <h2>{name}</h2>
@@ -29,7 +27,14 @@ const ListingDetails = (props) => {
       <img src={`${imagePathA}`} alt={props.name} />
       <img src={`${imagePathB}`} alt={props.name} />
       <img src={`${imagePathC}`} alt={props.name} />
-      <button>Favorite</button>
+      <button onClick={() => props.saveToFavorites(props.details.listing_id)}>
+        Add to Favorites
+      </button>
+      <button
+        onClick={() => props.removeFromFavorites(props.details.listing_id)}
+      >
+        Remove from Favorites
+      </button>
     </section>
   );
 };

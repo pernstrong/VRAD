@@ -26,7 +26,7 @@ class SignIn extends React.Component {
           email: this.state.email,
           purpose: this.state.purpose,
         })
-      : this.setState({ errorMsg: <p>Please fill in all inputs</p> });
+      : this.setState({ errorMsg: <p>Please fill in all inputs.</p> });
   };
 
   checkInputs = () => {
