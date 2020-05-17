@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import "./ListingDetails.css";
 
 const ListingDetails = (props) => {
@@ -42,3 +42,11 @@ const ListingDetails = (props) => {
 };
 
 export default ListingDetails;
+
+ListingDetails.propTypes = {
+  details: PropTypes.object,
+  saveToFavorites: PropTypes.func,
+  removeFromFavorites: PropTypes.func
+};
+
+

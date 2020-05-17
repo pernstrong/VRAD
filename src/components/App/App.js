@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      user: "",
+      user: '',
       areas: [],
       listings: [],
       currentArea: "",
@@ -38,11 +38,14 @@ class App extends React.Component {
     this.setState({ currentListing: listingId });
   };
 
+  // should we change to only store the id in favorites?? Otherwise we might be have double data in our state...if so we could have a function then that filters through the ids (findFavoritesToDisplay) and then set that to the props for favorite?
   saveToFavorites = (listingId) => {
-    const newFavorite = this.state.listings[this.state.currentArea].find(
-      (listing) => listing.listing_id === listingId
-    );
-    this.setState({ favorites: [...this.state.favorites, newFavorite] });
+    if (this.state.favorites.every(listing => listing.listing_id !== listingId)) {
+      const newFavorite = this.state.listings[this.state.currentArea].find(
+        (listing) => listing.listing_id === listingId
+      );
+      this.setState({ favorites: [...this.state.favorites, newFavorite] });
+    }
   };
 
   removeFromFavorites = (listingId) => {
