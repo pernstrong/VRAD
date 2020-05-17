@@ -1,0 +1,21 @@
+.area-card {
+  border: solid green;
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0.5em;
+}
+
+.area-name {
+  text-decoration: underline;
+}
+
+.about-area {
+  padding: 0.5em;
+}
+
+.view-listings-btn {
+  margin-bottom: 0.25em;
+}

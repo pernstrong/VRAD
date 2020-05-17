@@ -1,10 +1,8 @@
 import React from "react";
 import "./App.css";
-
 import SignIn from "../SignIn/SignIn";
 import AreasContainer from "../AreasContainer/AreasContainer";
 import ListingsContainer from "../ListingsContainer/ListingsContainer";
-// import Favorites from "../Favorites/Favorites";
 import Header from "../Header/Header";
 import ListingDetails from "../ListingDetails/ListingDetails";
 import Favorites from "../Favorites/Favorites";
@@ -57,22 +55,6 @@ class App extends React.Component {
     this.setState({ favorites: newFavorites });
   };
 
-  fetchListings = () => {
-    fetch("https://vrad-api.herokuapp.com/api/v1/listings/")
-      .then((response) => response.json())
-      .then((data) => {
-        const listingsInArea = data.listings.reduce(
-          (listingObj, listing) => {
-            listingObj[listing.area_id].push(listing);
-            return listingObj;
-          },
-          { "590": [], "751": [], "408": [], "240": [] }
-        );
-        this.setState({ listings: listingsInArea });
-      })
-      .catch((err) => console.error(err));
-  };
-
   componentDidMount() {
     fetch("https://vrad-api.herokuapp.com/api/v1/areas")
       .then((response) => response.json())
@@ -88,6 +70,22 @@ class App extends React.Component {
       .then((resolvedData) => this.setState({ areas: resolvedData }))
       .catch((err) => console.error(err));
   }
+
+  fetchListings = () => {
+    fetch("https://vrad-api.herokuapp.com/api/v1/listings/")
+      .then((response) => response.json())
+      .then((data) => {
+        const listingsInArea = data.listings.reduce(
+          (listingObj, listing) => {
+            listingObj[listing.area_id].push(listing);
+            return listingObj;
+          },
+          { "590": [], "751": [], "408": [], "240": [] }
+        );
+        this.setState({ listings: listingsInArea });
+      })
+      .catch((err) => console.error(err));
+  };
 
   render() {
     return (
