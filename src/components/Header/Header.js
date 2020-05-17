@@ -26,7 +26,9 @@ const Header = (props) => {
 
   return (
     <header>
-      <h1>V.R.A.D.</h1>
+      <Link to="/areas">
+        <h1>V.R.A.D.</h1>
+      </Link>
       <p className="accronym">Vacation Rentals Around Denver</p>
       {props.user && <p className="welcome-message">Welcome to Denver</p>}
       {props.user && userMessage()}
