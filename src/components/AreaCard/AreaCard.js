@@ -7,7 +7,7 @@ const AreaCard = (props) => {
   const { id, name, location, about } = props;
   return (
     <section className="area-card" data-id={id}>
-      <h2>{name}</h2>
+      <h2 className="area-name">{name}</h2>
       <h3>{location}</h3>
       <p>{about}</p>
       <Link to={`/areas/${id}`}>
