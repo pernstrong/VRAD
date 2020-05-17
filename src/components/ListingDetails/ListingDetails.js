@@ -10,23 +10,26 @@ const ListingDetails = (props) => {
 
   return (
     <section>
-      <h2>{name}</h2>
-      <p>
+      <h2 className="listing-name">{name}</h2>
+      <p className="listing-address">
         {address.street} {address.street}
       </p>
-      <h3>Details</h3>
-      <p>Bedrooms: {details.beds}</p>
-      <p>Bathrooms: {details.baths}</p>
-      <p>Cost per Night: {details.cost_per_night}</p>
-      <ul>
+      <h3 className="listing-details">Details</h3>
+      <p className="detail">Bedrooms: {details.beds}</p>
+      <p className="detail">Bathrooms: {details.baths}</p>
+      <p className="detail">Cost per Night: {details.cost_per_night}</p>
+      <ul className="features">
         {details.features.map((feature) => {
-          return <li>{feature}</li>;
+          return <li className="feature">{feature}</li>;
         })}
       </ul>
-      <img src={`${imagePathA}`} alt={props.name} />
-      <img src={`${imagePathB}`} alt={props.name} />
-      <img src={`${imagePathC}`} alt={props.name} />
-      <button onClick={() => props.saveToFavorites(props.details.listing_id)}>
+      <img className="listing-img" src={`${imagePathA}`} alt={props.name} />
+      <img className="listing-img" src={`${imagePathB}`} alt={props.name} />
+      <img className="listing-img" src={`${imagePathC}`} alt={props.name} />
+      <button
+        className="favorites-btn"
+        onClick={() => props.saveToFavorites(props.details.listing_id)}
+      >
         Add to Favorites
       </button>
       <button
