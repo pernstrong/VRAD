@@ -1,10 +1,11 @@
 import React from "react";
 import { MemoryRouter as Router } from "react-router-dom";
-import { render, fireEvent } from "@testing-library/react";
+import { cleanup, fireEvent, render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import AreaCard from "./AreaCard";
 
 describe("AreaCard", () => {
+  afterEach(cleanup);
 
   it("should render area cards and information", () => {
     const { getByText } = render(
@@ -12,7 +13,9 @@ describe("AreaCard", () => {
         <AreaCard
           name={"River North"}
           location={"North of Downtown Denver"}
-          about="RiNo is a burgeoning area with new bars, restaurants and event spaces popping up all the time."
+          about={
+            "RiNo is a burgeoning area with new bars, restaurants and event spaces popping up all the time."
+          }
         />
       </Router>
     );
@@ -25,7 +28,7 @@ describe("AreaCard", () => {
     expect(location).toBeInTheDocument();
     expect(about).toBeInTheDocument();
   });
-  
+
   it("should run setCurrentArea when View Listings button is clicked", () => {
     const mockSetCurrentArea = jest.fn();
     const { getByText } = render(

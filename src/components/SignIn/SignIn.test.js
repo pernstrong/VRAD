@@ -1,10 +1,12 @@
 import React from "react";
 import { MemoryRouter as Router } from "react-router-dom";
-import { render, fireEvent } from "@testing-library/react";
+import { cleanup, fireEvent, render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import SignIn from "./SignIn";
 
 describe("SignIn", () => {
+  afterEach(cleanup);
+
   it("should render sign in form", () => {
     const { getByText, getByLabelText } = render(
       <Router>
