@@ -1,7 +1,12 @@
+
 .listing-name {
   text-decoration: underline;
 }
 
 .listing-img {
   width: 33%
+}
+
+.listing-img:hover {
+  transform: scale(1.5);
 }
