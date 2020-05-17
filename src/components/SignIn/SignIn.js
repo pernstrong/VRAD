@@ -80,5 +80,5 @@ class SignIn extends React.Component {
 export default SignIn;
 
 SignIn.propTypes = {
-  setUser: PropTypes.func,
+  setUser: PropTypes.func.isRequired,
 };

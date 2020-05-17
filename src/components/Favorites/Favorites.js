@@ -31,6 +31,6 @@ const Favorites = (props) => {
 export default Favorites;
 
 Favorites.propTypes = {
-  listings: PropTypes.array,
-  setCurrentListing: PropTypes.func,
+  listings: PropTypes.array.isRequired,
+  setCurrentListing: PropTypes.func.isRequired,
 };
