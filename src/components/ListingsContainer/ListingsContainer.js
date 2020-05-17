@@ -2,7 +2,7 @@ import React from "react";
 // import PropTypes from "prop-types";
 import "./ListingsContainer.css";
 import ListingCard from "../ListingCard/ListingCard"
-import { Route } from 'react-router-dom'
+// import { Route } from 'react-router-dom'
 
 const ListingsContainer = (props) => {
   const listings = props.listings.map(listing => {
