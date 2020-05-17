@@ -9,7 +9,7 @@ const ListingDetails = (props) => {
   const imagePathC = `/images/${props.details.listing_id}_c.jpg`;
 
   return (
-    <section>
+    <section className="listing-details">
       <h2 className="listing-name">{name}</h2>
       <p className="listing-address">
         {address.street} {address.street}

@@ -22,7 +22,7 @@ const Favorites = (props) => {
       )}
       {favorites}
       <Link to="/areas">
-        <button>Return to Listings</button>
+        <button>Return to Areas</button>
       </Link>
     </section>
   );
