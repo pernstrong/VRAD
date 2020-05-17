@@ -20,5 +20,5 @@ const AreaCard = (props) => {
 export default AreaCard;
 
 AreaCard.propTypes = {
-  setCurrentArea: PropTypes.func.isRequired,
+  setCurrentArea: PropTypes.func,
 };
