@@ -1,8 +1,8 @@
 import React from "react";
+import "./Favorites.css";
 import ListingCard from "../ListingCard/ListingCard";
 import { Link } from "react-router-dom";
-// import PropTypes from "prop-types";
-import "./Favorites.css";
+import PropTypes from "prop-types";
 
 const Favorites = (props) => {
   const favorites = props.favorites.map((listing) => {
@@ -30,4 +30,7 @@ const Favorites = (props) => {
 
 export default Favorites;
 
-Favorites.propTypes = {};
+Favorites.propTypes = {
+  listings: PropTypes.array.isRequired,
+  setCurrentListing: PropTypes.func.isRequired,
+};

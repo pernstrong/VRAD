@@ -1,8 +1,8 @@
 import React from "react";
-// import PropTypes from "prop-types";
-import AreaCard from "../AreaCard/AreaCard";
 import "./AreasContainer.css";
+import AreaCard from "../AreaCard/AreaCard";
 import { Route } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const AreasContainer = (props) => {
   const areas = props.areas.map((area) => {
@@ -21,4 +21,7 @@ const AreasContainer = (props) => {
 
 export default AreasContainer;
 
-AreasContainer.propTypse = {};
+AreasContainer.propTypse = {
+  areas: PropTypes.array.isRequired,
+  setCurrentArea: PropTypes.func.isRequired,
+};
