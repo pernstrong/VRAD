@@ -67,3 +67,7 @@ h1 {
     cursor: pointer;
     
 }
+
+.my-favorites-nav-link:active {
+    background-color: yellow;
+}

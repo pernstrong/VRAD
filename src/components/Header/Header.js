@@ -1,7 +1,7 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = (props) => {
   const userMessage = () => {
@@ -16,9 +16,11 @@ const Header = (props) => {
           <Link to="/">
             <button onClick={() => props.resetUser()}>Sign Out</button>
           </Link>
-          <Link to="/favorites">
-            <button>My Favorites ({props.numberOfFavorites})</button>
-          </Link>
+          <NavLink to="/favorites" className='my-favorites-nav-link'>
+            <button className='my-favorites-button'>
+            My Favorites ({props.numberOfFavorites})
+            </button>
+          </NavLink>
         </section>
       </section>
     );
@@ -35,3 +37,9 @@ const Header = (props) => {
 };
 
 export default Header;
+
+Header.propTypes = {
+  user: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  resetUser: PropTypes.func,
+  numberOfFavorites: PropTypes.number
+}

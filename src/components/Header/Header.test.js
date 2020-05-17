@@ -22,4 +22,17 @@ describe('Header', () => {
 
         expect(getByText('Trip Purpose: fugitive')).toBeInTheDocument()
     })
+
+    it('should call the resetUser method when when the Sign Out button is clicked', () => {
+        const mockResetUser = jest.fn()
+        const { getByText } = render(<MemoryRouter><Header user={ {name: 'Lauren', email: 'meatballs@aol.com', purpose: 'fugitive' }} resetUser={mockResetUser}/> </MemoryRouter>)
+
+
+        fireEvent.click(getByText('Sign Out'))
+
+        expect(mockResetUser).toHaveBeenCalled()
+
+    })
+
+//    test My Favorites button? how? by Link/url??
 })

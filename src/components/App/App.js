@@ -10,14 +10,11 @@ import ListingDetails from "../ListingDetails/ListingDetails";
 import Favorites from "../Favorites/Favorites";
 import { Route } from "react-router-dom";
 
-// this.state will probably need: user, areas, currentArea/currentListings(in order to pass down to the listingsContainer to display the correct listings for each area), selectedListing(for all the details), favorites. maybe an allListings array...i'm thinking this would be the easiest way to fetch and then store the data...otherwise we could add a key to the areas objects that holds all the listings but that might get tricky. allListings could then be iterated over to match area_ids in order to display the correct ones for each area?
-// BE CAREFUL NOT TO REPLICATE DATA IN this.state...we can do things like store ideas for favorites instead of storing the whole object. Then iterate over and match ids to display favorites.
-
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      user: "",
+      user: '',
       areas: [],
       listings: [],
       currentArea: "",
@@ -43,11 +40,14 @@ class App extends React.Component {
     this.setState({ currentListing: listingId });
   };
 
+  // should we change to only store the id in favorites?? Otherwise we might be have double data in our state...if so we could have a function then that filters through the ids (findFavoritesToDisplay) and then set that to the props for favorite?
   saveToFavorites = (listingId) => {
-    const newFavorite = this.state.listings[this.state.currentArea].find(
-      (listing) => listing.listing_id === listingId
-    );
-    this.setState({ favorites: [...this.state.favorites, newFavorite] });
+    if (this.state.favorites.every(listing => listing.listing_id !== listingId)) {
+      const newFavorite = this.state.listings[this.state.currentArea].find(
+        (listing) => listing.listing_id === listingId
+      );
+      this.setState({ favorites: [...this.state.favorites, newFavorite] });
+    }
   };
 
   removeFromFavorites = (listingId) => {

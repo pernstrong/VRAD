@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import "./ListingCard.css";
 import { Link } from "react-router-dom";
 
@@ -22,4 +22,7 @@ const ListingCard = (props) => {
 
 export default ListingCard;
 
-ListingCard.propTypes = {};
+ListingCard.propTypes = {
+   listing: PropTypes.object,
+   setCurrentListing: PropTypes.func
+};
