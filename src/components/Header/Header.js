@@ -13,14 +13,14 @@ const Header = (props) => {
           <p>Trip Purpose: {props.user.purpose}</p>
         </section>
         <section className="button-section">
-          <Link to="/">
-            <button onClick={() => props.resetUser()}>Sign Out</button>
-          </Link>
-          <NavLink to="/favorites" className='my-favorites-nav-link'>
+          <NavLink to="/favorites" activeClassName='my-favorites-button-active'>
             <button className='my-favorites-button'>
             My Favorites ({props.numberOfFavorites})
             </button>
           </NavLink>
+          <Link to="/">
+            <button onClick={() => props.resetUser()}>Sign Out</button>
+          </Link>
         </section>
       </section>
     );

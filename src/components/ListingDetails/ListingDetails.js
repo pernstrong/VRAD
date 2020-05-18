@@ -17,7 +17,7 @@ const ListingDetails = (props) => {
       <h3 className="listing-details">Details</h3>
       <p className="detail">Bedrooms: {details.beds}</p>
       <p className="detail">Bathrooms: {details.baths}</p>
-      <p className="detail">Cost per Night: {details.cost_per_night}</p>
+      <p className="detail">Cost per Night: ${details.cost_per_night}</p>
       <ul className="features">
         {details.features.map((feature) => {
           return <li className="feature">{feature}</li>;
