@@ -9,40 +9,20 @@ h1 {
   color: #f2ac29;
   text-shadow: 2px 2px 1px #2b1b19;
   grid-column: 1 / 2;
-  grid-row: 2;
+  grid-row: 1;
   letter-spacing: 0.2em;
+  margin-left: 2%;
+  /* display: inline-block; */
 }
 
 .acronym {
   font-family: "Anton", sans-serif;
   text-shadow: 1px 1px 0px #f2ac29;
   grid-column: 1 / 2;
-  grid-row: 1;
-    background-color: #9bd1f2;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding-bottom: 1%
-}
-
-h1 {
-    color: #d96424;
-    margin-bottom: 0;
-    display: inline-block;
-    grid-column: 1 / 2;
-    grid-row: 1;
-    margin-left: 2%;
-}
-
-.accronym {
-    margin-top: -10%;
-    font-weight: bold;
-    color: #0f98cf;
-    /* color: #0a8cc1; */
-    display: inline-block;
-    grid-column: 1 / 2;
-    grid-row: 2;
-    margin-left: 2%;
-    margin-top: 0;
+  grid-row: 2;
+  /* display: inline-block; */
+  margin-left: 2%;
+  margin-top: -10%;
 }
 
 .message-section {
@@ -50,73 +30,49 @@ h1 {
   grid-row: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* margin-top: 0; */
+  margin-top: 0;
 }
 
-.welcome-message {
+.welcome-msg {
   grid-column: 2 / 3;
   /* display: inline-block; */
-    margin: 3% auto;
-    color: #d96424;
-    display: inline-block;
-    grid-column: 2 / 3;
-    font-size: 4vh;
-    grid-row: 1;
+  margin: 3% auto;
+  grid-column: 2 / 3;
+  font-size: 4vh;
+  grid-row: 1;
 }
 
 .guest-details {
   grid-column: 1 / 2;
 }
 
-.guest-details {
-}
-
-.guest-details p {
-}
-
 .button-section {
   grid-column: 2 / 3;
 }
 
-button {
-  background-color: #f2ac29;
-  border: none;
-  border-radius: 0.2em;
-  box-shadow: 1px 1px 1px #2b1b19;
-  color: #2b1b19;
-  cursor: pointer;
-  font-family: "Anton", sans-serif;
-  letter-spacing: 0.1em;
-  padding: 0.25em;
-}
-.guest-details h4 {
-    font-size: 2vh;
-    /* margin-bottom: 0; */
-    /* margin-top: 0; */
-    margin: 1% 2%;
+.guest-details {
+  margin: 2%;
 }
 
 .guest-details p {
-    font-size: 2vh;
-    margin: 2%;
+  margin: 2%;
 }
 
-.button-section {
-    grid-column: 2 / 3;
-    /* margin: 5% 0 0 1% */
+.btn-section {
+  grid-column: 2 / 3;
+  margin: 1%;
 }
 
-.button-section button {
-    display: inline-block;
-    font-size: 2vh;
-    padding: 2%;
-    margin: 5% 5%;
-    border-radius: 10px;
-    cursor: pointer;
-    grid-row: 2;
+.btn-section button {
+  display: inline-block;
+  font-size: 2vh;
+  padding: 2%;
+  margin: 2%;
+  border-radius: 0.2em;
+  cursor: pointer;
+  grid-row: 2;
 }
 
-.my-favorites-button-active button {
-    border: 2px solid #f23422;
-    color: #f23422;
+.my-favorites-btn-active button {
+  border: 2px solid #d96523;
 }

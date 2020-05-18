@@ -12,9 +12,9 @@ const Header = (props) => {
           <p>User: {props.user.name}</p>
           <p>Trip Purpose: {props.user.purpose}</p>
         </section>
-        <section className="button-section">
-          <NavLink to="/favorites" activeClassName='my-favorites-button-active'>
-            <button className='my-favorites-button'>
+        <section className="btn-section">
+          <NavLink to="/favorites" activeClassName='my-favorites-btn-active'>
+            <button className='my-favorites-btn'>
             My Favorites ({props.numberOfFavorites})
             </button>
           </NavLink>
@@ -32,7 +32,7 @@ const Header = (props) => {
         <h1>V.R.A.D.</h1>
       {/* </Link> */}
       <p className="acronym">Vacation Rentals Around Denver</p>
-      {props.user && <h2 className="welcome-message">Welcome to Denver!</h2>}
+      {props.user && <h2 className="welcome-msg">Welcome to Denver!</h2>}
       {props.user && userMessage()}
     </header>
   );

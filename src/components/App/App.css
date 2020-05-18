@@ -14,6 +14,18 @@
   font-family: "Oxygen", sans-serif;
 }
 
+button {
+  background-color: #f2ac29;
+  border: none;
+  border-radius: 0.2em;
+  box-shadow: 1px 1px 1px #2b1b19;
+  color: #2b1b19;
+  cursor: pointer;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 0.1em;
+  padding: 0.25em;
+}
+
 /* colors
 darkest blue #0487D9
 lightest blue #9BD1F2
@@ -25,5 +37,5 @@ text #2B1B19
 
 fonts
 font-family: 'Oxygen', sans-serif; (regular)
-font-family: 'Anton', sans-serif; (headings)
+font-family: 'Anton', sans-serif; (heading / button)
 */
