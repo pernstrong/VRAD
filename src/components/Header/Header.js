@@ -13,14 +13,14 @@ const Header = (props) => {
           <p>Trip Purpose: {props.user.purpose}</p>
         </section>
         <section className="button-section">
-          <Link to="/">
-            <button onClick={() => props.resetUser()}>Sign Out</button>
-          </Link>
-          <NavLink to="/favorites" className='my-favorites-nav-link'>
+          <NavLink to="/favorites" activeClassName='my-favorites-button-active'>
             <button className='my-favorites-button'>
             My Favorites ({props.numberOfFavorites})
             </button>
           </NavLink>
+          <Link to="/">
+            <button onClick={() => props.resetUser()}>Sign Out</button>
+          </Link>
         </section>
       </section>
     );
@@ -28,10 +28,12 @@ const Header = (props) => {
 
   return (
     <header>
-      <Link to="/areas">
-        <h1>V.R.A.D.</h1>
-      </Link>
-      <p className="accronym">Vacation Rentals Around Denver</p>
+      <section className="vrad">
+        <Link to="/areas">
+          <h1>VRAD</h1>
+        </Link>
+        <p className="accronym">Vacation Rentals Around Denver</p>
+      </section>
       {props.user && <p className="welcome-message">Welcome to Denver</p>}
       {props.user && userMessage()}
     </header>
