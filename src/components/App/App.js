@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      user: '',
+      user: "",
       areas: [],
       listings: [],
       currentArea: "",
@@ -38,19 +38,32 @@ class App extends React.Component {
     this.setState({ currentListing: listingId });
   };
 
-  // should we change to only store the id in favorites?? Otherwise we might be have double data in our state...if so we could have a function then that filters through the ids (findFavoritesToDisplay) and then set that to the props for favorite?
   saveToFavorites = (listingId) => {
-    if (this.state.favorites.every(listing => listing.listing_id !== listingId)) {
-      const newFavorite = this.state.listings[this.state.currentArea].find(
-        (listing) => listing.listing_id === listingId
-      );
-      this.setState({ favorites: [...this.state.favorites, newFavorite] });
+    if (!this.state.favorites.includes(listingId)) {
+      this.setState({ favorites: [...this.state.favorites, listingId] });
     }
+  };
+
+  findFavoriteListings = () => {
+    const allListings = [
+      ...this.state.listings["590"],
+      ...this.state.listings["751"],
+      ...this.state.listings["408"],
+      ...this.state.listings["240"],
+    ];
+    const favorites = [];
+    this.state.favorites.forEach((favorite) => {
+      const listing = allListings.find(
+        (listing) => listing.listing_id === favorite
+      );
+      favorites.push(listing);
+    });
+    return favorites;
   };
 
   removeFromFavorites = (listingId) => {
     const newFavorites = this.state.favorites.filter(
-      (favorite) => favorite.listing_id !== listingId
+      (favorite) => favorite !== listingId
     );
     this.setState({ favorites: newFavorites });
   };
@@ -144,6 +157,7 @@ class App extends React.Component {
                 details={currentListing}
                 saveToFavorites={this.saveToFavorites}
                 removeFromFavorites={this.removeFromFavorites}
+                favoriteIds={this.state.favorites}
               />
             );
           }}
@@ -154,7 +168,7 @@ class App extends React.Component {
           render={() => {
             return (
               <Favorites
-                favorites={this.state.favorites}
+                favorites={this.findFavoriteListings()}
                 setCurrentListing={this.setCurrentListing}
               />
             );
