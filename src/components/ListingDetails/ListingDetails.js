@@ -20,7 +20,7 @@ const ListingDetails = (props) => {
       <p className="detail">Cost per Night: ${details.cost_per_night}</p>
       <ul className="features">
         {details.features.map((feature) => {
-          return <li className="feature">{feature}</li>;
+          return <li className="feature" key={feature}>{feature}</li>;
         })}
       </ul>
       <img className="listing-img" src={`${imagePathA}`} alt={props.name} />
