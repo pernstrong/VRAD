@@ -6,7 +6,7 @@ header {
 
 h1 {
   font-family: "Anton", sans-serif;
-  color: #d96523;
+  color: #f2ac29;
   text-shadow: 2px 2px 1px #2b1b19;
   grid-column: 1 / 2;
   grid-row: 2;
@@ -15,7 +15,7 @@ h1 {
 
 .acronym {
   font-family: "Anton", sans-serif;
-  text-shadow: 1px 1px 0px #d96523;
+  text-shadow: 1px 1px 0px #f2ac29;
   grid-column: 1 / 2;
   grid-row: 1;
 }
@@ -49,8 +49,9 @@ h1 {
 
 button {
   background-color: #f2ac29;
-  box-shadow: 1px 1px 1px #2b1b19;
+  border: none;
   border-radius: 0.2em;
+  box-shadow: 1px 1px 1px #2b1b19;
   color: #2b1b19;
   cursor: pointer;
   font-family: "Anton", sans-serif;
