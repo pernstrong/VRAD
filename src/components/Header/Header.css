@@ -1,65 +1,59 @@
 header {
-    background-color: lightgray;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding-bottom: 1%
+  background-image: linear-gradient(#9bd1f2, #0487d9);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 h1 {
-    color: blue;
-    margin-bottom: 0;
-    display: inline-block;
-    grid-column: 1 / 2;
-    grid-row: 1;
-    margin-left: 2%;
+  font-family: "Anton", sans-serif;
+  color: #d96523;
+  text-shadow: 2px 2px 1px #2b1b19;
+  grid-column: 1 / 2;
+  grid-row: 2;
+  letter-spacing: 0.2em;
 }
 
-.accronym {
-    margin-top: -50px;
-    display: inline-block;
-    grid-column: 1 / 2;
-    grid-row: 2;
-    margin-left: 3%;
+.acronym {
+  font-family: "Anton", sans-serif;
+  text-shadow: 1px 1px 0px #d96523;
+  grid-column: 1 / 2;
+  grid-row: 1;
 }
 
 .message-section {
- grid-column: 3 / 4;
- grid-row: 1;
- margin-top: 0; 
- display: grid;
- grid-template-columns: 1fr 1fr;  
+  grid-column: 3 / 4;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* margin-top: 0; */
 }
 
 .welcome-message {
-    display: inline-block;
-    grid-column: 2 / 3;
-    font-size: 5vh;
+  grid-column: 2 / 3;
+  /* display: inline-block; */
 }
 
 .guest-details {
-    grid-column: 1 / 2;
+  grid-column: 1 / 2;
 }
 
-.guest-details h4 {
-    font-size: 3vh;
-    margin-bottom: 0;
+.guest-details {
 }
 
 .guest-details p {
-    font-size: 3vh;
-    margin: 2%;
 }
 
 .button-section {
-    grid-column: 2 / 3;
-    margin: 5% 0 0 15%
+  grid-column: 2 / 3;
 }
 
-.button-section button {
-    display: block;
-    font-size: 3vh;
-    padding: 2%;
-    margin: 5% auto;
-    border-radius: 10px;
-    cursor: pointer;
+button {
+  background-color: #f2ac29;
+  box-shadow: 1px 1px 1px #2b1b19;
+  border-radius: 0.2em;
+  color: #2b1b19;
+  cursor: pointer;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 0.1em;
+  padding: 0.25em;
 }

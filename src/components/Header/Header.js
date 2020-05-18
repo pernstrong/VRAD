@@ -8,7 +8,7 @@ const Header = (props) => {
     return (
       <section className="message-section">
         <section className="guest-details">
-          <h4>Guest Details</h4>
+          <h3>Guest Details</h3>
           <p>User: {props.user.name}</p>
           <p>Trip Purpose: {props.user.purpose}</p>
         </section>
@@ -28,11 +28,11 @@ const Header = (props) => {
 
   return (
     <header>
-      <Link to="/areas">
+      {/* <Link to="/areas"> */}
         <h1>V.R.A.D.</h1>
-      </Link>
-      <p className="accronym">Vacation Rentals Around Denver</p>
-      {props.user && <p className="welcome-message">Welcome to Denver</p>}
+      {/* </Link> */}
+      <p className="acronym">Vacation Rentals Around Denver</p>
+      {props.user && <h2 className="welcome-message">Welcome to Denver!</h2>}
       {props.user && userMessage()}
     </header>
   );
