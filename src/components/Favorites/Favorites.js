@@ -16,14 +16,16 @@ const Favorites = (props) => {
   });
   return (
     <section className="favorites-container">
+    <div className="favorites-header">
       <h2>My Favorites</h2>
+      <Link to="/areas">
+        <button>Return to Areas</button>
+      </Link>
+      </div>
       {props.favorites.length === 0 && (
         <p>You have no favorites yet. Favorite a listing!</p>
       )}
       {favorites}
-      <Link to="/areas">
-        <button>Return to Areas</button>
-      </Link>
     </section>
   );
 };

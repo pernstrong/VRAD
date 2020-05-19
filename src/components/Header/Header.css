@@ -54,11 +54,9 @@ h1 {
 }
 
 .btn-section button {
-  border-radius: 0.2em;
-  cursor: pointer;
   display: inline-block;
   font-size: 2vh;
-  margin: 5% 3%;
+  margin: 3%;
   padding: 3%;
 }
 
