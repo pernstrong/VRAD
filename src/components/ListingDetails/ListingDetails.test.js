@@ -36,7 +36,6 @@ describe('ListingDetails', () => {
     it('should display basic info about the listing', () => {
         const { getByText } = render(<MemoryRouter><ListingDetails  details={listing1}/></MemoryRouter>)
 
-// need to pass listing in as a prop
         expect(getByText('Bedrooms: 3')).toBeInTheDocument()
         expect(getByText('Bathrooms: 2.5')).toBeInTheDocument()
         expect(getByText('Cost per Night: $10')).toBeInTheDocument()
@@ -45,12 +44,11 @@ describe('ListingDetails', () => {
     it('should display a list of features', ()  => {
         const { getByText } = render(<MemoryRouter><ListingDetails  details={listing1}/></MemoryRouter>)
 
-        // need to pass listing in as a prop
         expect(getByText('hot tub')).toBeInTheDocument()
         expect(getByText('espresso machine')).toBeInTheDocument()
 
     })
-// why failing, need async for picture to get loaded???? 
+    
     it.skip('should pictures of the lisiting', ()  => {
         const { getByAltText } = render(<MemoryRouter><ListingDetails  details={listing1}/></MemoryRouter>)
 
