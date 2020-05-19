@@ -30,12 +30,18 @@ describe("ListingDetails", () => {
     };
   });
 
+<<<<<<< HEAD
+        expect(getByText('Bedrooms: 3')).toBeInTheDocument()
+        expect(getByText('Bathrooms: 2.5')).toBeInTheDocument()
+        expect(getByText('Cost per Night: $10')).toBeInTheDocument()
+=======
   it("should display basic info about the listing", () => {
     const { getByText } = render(
       <MemoryRouter>
         <ListingDetails details={listing1} favoriteIds={[]} />
       </MemoryRouter>
     );
+>>>>>>> master
 
     expect(getByText("Bedrooms: 3")).toBeInTheDocument();
     expect(getByText("Bathrooms: 2.5")).toBeInTheDocument();
@@ -48,6 +54,15 @@ describe("ListingDetails", () => {
       </MemoryRouter>
     );
 
+<<<<<<< HEAD
+        expect(getByText('hot tub')).toBeInTheDocument()
+        expect(getByText('espresso machine')).toBeInTheDocument()
+
+    })
+    
+    it.skip('should pictures of the lisiting', ()  => {
+        const { getByAltText } = render(<MemoryRouter><ListingDetails  details={listing1}/></MemoryRouter>)
+=======
     expect(getByText("hot tub")).toBeInTheDocument();
     expect(getByText("espresso machine")).toBeInTheDocument();
   });
@@ -61,6 +76,7 @@ describe("ListingDetails", () => {
 
     expect(getByAltText("Daves Casa")).toBeInTheDocument();
   });
+>>>>>>> master
 
   it("should call the saveToFavorites method when the Add to Favorites button is clicked", () => {
     const mockSaveToFavorites = jest.fn();

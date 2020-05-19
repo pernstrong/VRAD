@@ -65,8 +65,11 @@ class SignIn extends React.Component {
           <option value="business">Business</option>
           <option value="vacation">Vacation</option>
           <option value="fugitive">Fugitive on the Run</option>
+          <option value="other">Other</option>
         </select>
-        {this.state.errorMsg}
+        <p className="error-message">
+          {this.state.errorMsg}
+        </p>
         <Link to={this.checkInputs() ? "/areas" : "/"}>
           <button className="signIn-btn" onClick={this.handleClick}>
             Sign In
