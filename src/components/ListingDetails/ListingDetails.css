@@ -3,6 +3,9 @@
   flex-direction: column;
   margin: 0.5em;
   padding: 0.5em;
+  background-image: linear-gradient(#9bd1f2, #0487d9);
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px #2b1b19;
 }
 
 .details-header {
@@ -58,6 +61,7 @@ li {
 .listing-img {
   align-items: space-evenly;
   width: 33%;
+  max-height: 43vh;
 }
 
 .listing-img:hover {

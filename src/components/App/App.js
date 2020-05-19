@@ -27,7 +27,7 @@ class App extends React.Component {
   };
 
   resetUser = () => {
-    this.setState({ user: "" });
+    this.setState({ user: "", favorites: []});
   };
 
   setCurrentArea = (area) => {
