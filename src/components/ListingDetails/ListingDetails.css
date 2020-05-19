@@ -1,12 +1,43 @@
+.listing-details {
+  padding: .5em;
+  margin: .5em;
+  display: flex;
+  flex-direction: column;
+}
+ .details-header {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+ }
+
+ .name-address {
+  display: flex;
+  flex-direction: column;
+ }
 
 .listing-name {
   text-decoration: underline;
 }
 
+.favorites-btn {
+  margin-top: .5em;
+  font-size: 2vh;
+  width: 10vw;
+}
+
+ul {
+  margin-left: 1em;
+}
+
 .listing-img {
-  width: 33%
+  width: 33%;
+  align-items: space-evenly;
 }
 
 .listing-img:hover {
   transform: scale(1.5);
+}
+
+.images {
+
 }

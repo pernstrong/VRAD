@@ -10,22 +10,13 @@ const ListingDetails = (props) => {
 
   return (
     <section className="listing-details">
+    <div className="details-header">
+    <div className="name-address">
       <h2 className="listing-name">{name}</h2>
       <p className="listing-address">
         {address.street} {address.street}
       </p>
-      <h3 className="listing-details">Details</h3>
-      <p className="detail">Bedrooms: {details.beds}</p>
-      <p className="detail">Bathrooms: {details.baths}</p>
-      <p className="detail">Cost per Night: ${details.cost_per_night}</p>
-      <ul className="features">
-        {details.features.map((feature) => {
-          return <li className="feature" key={feature}>{feature}</li>;
-        })}
-      </ul>
-      <img className="listing-img" src={`${imagePathA}`} alt={props.name} />
-      <img className="listing-img" src={`${imagePathB}`} alt={props.name} />
-      <img className="listing-img" src={`${imagePathC}`} alt={props.name} />
+      </div>
       <button
         className="favorites-btn"
         onClick={() =>
@@ -38,6 +29,30 @@ const ListingDetails = (props) => {
           ? "Remove from Favorites"
           : "Add to Favorites"}
       </button>
+      </div>
+      <div className="details">
+      <h3>Details</h3>
+      <p className="detail">Bedrooms: {details.beds}</p>
+      <p className="detail">Bathrooms: {details.baths}</p>
+      <p className="detail">Cost per Night: ${details.cost_per_night}</p>
+      </div>
+      <div className="features">
+      <h4>Features</h4>
+      <ul className="features">
+        {details.features.map((feature) => {
+          return (
+            <li className="feature" key={feature}>
+              {feature}
+            </li>
+          );
+        })}
+      </ul>
+      </div>
+      <div className="images">
+        <img className="listing-img" src={`${imagePathA}`} alt={props.name} />
+        <img className="listing-img" src={`${imagePathB}`} alt={props.name} />
+        <img className="listing-img" src={`${imagePathC}`} alt={props.name} />
+      </div>
     </section>
   );
 };

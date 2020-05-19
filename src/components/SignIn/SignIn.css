@@ -1,51 +1,54 @@
 .signIn-form {
-    /* border: 1px solid blue; */
-    width: 20%;
-    text-align: center;
-    margin: 5% auto;
-    /* background-color: white; */
-    color: #2B1B19;
-    /* text-shadow: -1px 0 #2B1B19, 0 1px #2B1B19, 1px 0 #2B1B19, 0 -1px #2B1B19; */
-
+  /* border: 1px solid blue; */
+  width: 20%;
+  text-align: center;
+  margin: 5% auto;
+  /* background-color: white; */
+  color: #2b1b19;
+  /* text-shadow: -1px 0 #2B1B19, 0 1px #2B1B19, 1px 0 #2B1B19, 0 -1px #2B1B19; */
 }
 
 .signIn-form h2 {
-    margin-bottom: 5%;
+  margin-bottom: 5%;
+}
+
+label {
+    font-weight: bold;
 }
 
 input {
-    font-size: 3vh;
-    display: block;
-    margin: 5% auto;
-    border: none;
-    border-radius: .1em;
-    padding: .1em;    
+  font-size: 3vh;
+  display: block;
+  margin: 5% auto;
+  border: none;
+  border-radius: 0.1em;
+  padding: 0.1em;
 }
 
 ::placeholder {
-    color: #0487D9;
+  color: #0487d9;
 }
 
 select {
-    font-size: 2vh;
-    cursor: pointer;
-    margin-top: 2%;
-    border: none;
-    color: #0487D9;
+  font-size: 2vh;
+  cursor: pointer;
+  margin-top: 2%;
+  border: none;
+  color: #0487d9;
 }
 
 .signIn-btn {
-    /* border-radius: 10px; */
-    /* display: block; */
-    font-size: 3vh;
-    margin: 5% auto;
-    padding: 2% 3%;
-    cursor: pointer;
-} 
+  /* border-radius: 10px; */
+  /* display: block; this is what was making the underline strange */
+  font-size: 3vh;
+  margin: 5% auto;
+  padding: 2% 3%;
+  cursor: pointer;
+}
 
 .error-message {
-    margin-top: 2%;
-    font-size: 3vh;
-    color: #F23322;
-    font-weight: bold;
+  margin-top: 2%;
+  font-size: 3vh;
+  color: #f23322;
+  font-weight: bold;
 }

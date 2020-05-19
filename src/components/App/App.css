@@ -26,6 +26,10 @@ button {
   padding: 0.25em;
 }
 
+button:hover {
+  border: solid 1.5px #D96523;
+}
+
 /* colors
 darkest blue #0487D9
 lightest blue #9BD1F2
