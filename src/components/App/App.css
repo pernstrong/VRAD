@@ -9,15 +9,15 @@
 .App {
   background-image: url("/images/background.jpg");
   background-size: cover;
-  height: 100vh;
   color: #2b1b19;
   font-family: "Oxygen", sans-serif;
+  height: 100vh;
 }
 
 button {
   background-color: #f2ac29;
-  border: none;
   border-radius: 0.2em;
+  border: none;
   box-shadow: 1px 1px 1px #2b1b19;
   color: #2b1b19;
   cursor: pointer;
@@ -27,17 +27,17 @@ button {
 }
 
 button:hover {
-  border: solid 1.5px #D96523;
+  border: solid 1.5px #d96523;
 }
 
 /* colors
-darkest blue #0487D9
-lightest blue #9BD1F2
+bright red #F23322
 brightest blue #049DD9
 burnt orange #D96523
-yellow #F2AC29
-bright red #F23322
+darkest blue #0487D9
+lightest blue #9BD1F2
 text #2B1B19
+yellow #F2AC29
 
 fonts
 font-family: 'Oxygen', sans-serif; (regular)

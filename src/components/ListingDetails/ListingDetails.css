@@ -1,43 +1,65 @@
 .listing-details {
-  padding: .5em;
-  margin: .5em;
   display: flex;
   flex-direction: column;
+  margin: 0.5em;
+  padding: 0.5em;
 }
- .details-header {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
- }
-
- .name-address {
+.details-header {
   display: flex;
-  flex-direction: column;
- }
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 .listing-name {
   text-decoration: underline;
 }
 
+.name-address {
+  display: flex;
+  flex-direction: column;
+}
+
 .favorites-btn {
-  margin-top: .5em;
   font-size: 2vh;
+  margin-top: 0.5em;
   width: 10vw;
 }
 
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.details h3 {
+  padding: 0.25em;
+}
+
+.detail {
+  padding: 0.5em;
+}
+
+.features {
+  display: flex;
+  justify-content: flex-start;
+  padding: .25em;
+}
+
 ul {
+  display: flex;
   margin-left: 1em;
 }
 
+li {
+  flex-direction: row;
+  padding-left: 1em;
+}
+
 .listing-img {
-  width: 33%;
   align-items: space-evenly;
+  width: 33%;
 }
 
 .listing-img:hover {
   transform: scale(1.5);
-}
-
-.images {
-
 }
