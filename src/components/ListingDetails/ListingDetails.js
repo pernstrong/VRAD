@@ -20,7 +20,7 @@ const ListingDetails = (props) => {
       <p className="detail">Cost per Night: ${details.cost_per_night}</p>
       <ul className="features">
         {details.features.map((feature) => {
-          return <li className="feature">{feature}</li>;
+          return <li className="feature" key={feature}>{feature}</li>;
         })}
       </ul>
       <img className="listing-img" src={`${imagePathA}`} alt={props.name} />
@@ -28,14 +28,15 @@ const ListingDetails = (props) => {
       <img className="listing-img" src={`${imagePathC}`} alt={props.name} />
       <button
         className="favorites-btn"
-        onClick={() => props.saveToFavorites(props.details.listing_id)}
+        onClick={() =>
+          props.favoriteIds.includes(props.details.listing_id)
+            ? props.removeFromFavorites(props.details.listing_id)
+            : props.saveToFavorites(props.details.listing_id)
+        }
       >
-        Add to Favorites
-      </button>
-      <button
-        onClick={() => props.removeFromFavorites(props.details.listing_id)}
-      >
-        Remove from Favorites
+        {props.favoriteIds.includes(props.details.listing_id)
+          ? "Remove from Favorites"
+          : "Add to Favorites"}
       </button>
     </section>
   );
@@ -46,7 +47,5 @@ export default ListingDetails;
 ListingDetails.propTypes = {
   details: PropTypes.object,
   saveToFavorites: PropTypes.func,
-  removeFromFavorites: PropTypes.func
+  removeFromFavorites: PropTypes.func,
 };
-
-

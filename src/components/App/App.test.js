@@ -23,12 +23,12 @@ describe("App", () => {
     expect(getByText("Welcome, please sign in!")).toBeInTheDocument();
   });
 
-  it('should render AreasContainer on successful sign in', async () => {
+  it("should render AreasContainer on successful sign in", async () => {
     const { getByText, getByLabelText, getByPlaceholderText } = render(
       <Router>
         <App />
       </Router>
-    )
+    );
     fireEvent.change(getByPlaceholderText("Your name"), {
       target: { value: "Foxy Meatball" },
     });
@@ -39,7 +39,105 @@ describe("App", () => {
       target: { value: "vacation" },
     });
     fireEvent.click(getByText("Sign In"));
-    const rinoHeading = await waitFor(() => getByText('River North'))
-    expect(rinoHeading).toBeInTheDocument()
-  })
+    const rinoHeading = await waitFor(() => getByText("River North"));
+    expect(rinoHeading).toBeInTheDocument();
+  });
+
+  it("should render ListingDetails on Listing Details button click", async () => {
+    const {
+      getByText,
+      getAllByText,
+      getByLabelText,
+      getByPlaceholderText,
+    } = render(
+      <Router>
+        <App />
+      </Router>
+    );
+    fireEvent.change(getByPlaceholderText("Your name"), {
+      target: { value: "Foxy Meatball" },
+    });
+    fireEvent.change(getByPlaceholderText("Your email"), {
+      target: { value: "foxymeatball@aol.com" },
+    });
+    fireEvent.change(getByLabelText("Why are you visiting?"), {
+      target: { value: "vacation" },
+    });
+    fireEvent.click(getByText("Sign In"));
+    const viewListingsBtns = await waitFor(() => getAllByText("View Listings"));
+    fireEvent.click(viewListingsBtns[0]);
+    const listingDetailsBtns = getAllByText("Listing Details");
+    fireEvent.click(listingDetailsBtns[0]);
+    expect(getByText("Cost per Night: $420")).toBeInTheDocument();
+  });
+
+  it("should render user favorites on My Favorites button click", async () => {
+    const {
+      getByText,
+      getAllByText,
+      getByLabelText,
+      getByPlaceholderText,
+    } = render(
+      <Router>
+        <App />
+      </Router>
+    );
+    fireEvent.change(getByPlaceholderText("Your name"), {
+      target: { value: "Foxy Meatball" },
+    });
+    fireEvent.change(getByPlaceholderText("Your email"), {
+      target: { value: "foxymeatball@aol.com" },
+    });
+    fireEvent.change(getByLabelText("Why are you visiting?"), {
+      target: { value: "vacation" },
+    });
+    fireEvent.click(getByText("Sign In"));
+    const viewListingsBtns = await waitFor(() => getAllByText("View Listings"));
+    fireEvent.click(viewListingsBtns[0]);
+    const listingDetailsBtns = getAllByText("Listing Details");
+    fireEvent.click(listingDetailsBtns[0]);
+    const addToFavoritesBtn = getByText("Add to Favorites");
+    fireEvent.click(addToFavoritesBtn);
+    const myFavoritesBtn = getByText("My Favorites (1)");
+    fireEvent.click(myFavoritesBtn);
+    expect(getByText("Hip RiNo Party Spot")).toBeInTheDocument();
+  });
+
+  it("should update Favorites on Remove from Favorites click", async () => {
+    const {
+      getByText,
+      getAllByText,
+      getByLabelText,
+      getByPlaceholderText,
+    } = render(
+      <Router>
+        <App />
+      </Router>
+    );
+    fireEvent.change(getByPlaceholderText("Your name"), {
+      target: { value: "Foxy Meatball" },
+    });
+    fireEvent.change(getByPlaceholderText("Your email"), {
+      target: { value: "foxymeatball@aol.com" },
+    });
+    fireEvent.change(getByLabelText("Why are you visiting?"), {
+      target: { value: "vacation" },
+    });
+    fireEvent.click(getByText("Sign In"));
+    const viewListingsBtns = await waitFor(() => getAllByText("View Listings"));
+    fireEvent.click(viewListingsBtns[0]);
+    const listingDetailsBtns = getAllByText("Listing Details");
+    fireEvent.click(listingDetailsBtns[0]);
+    const addToFavoritesBtn = getByText("Add to Favorites");
+    fireEvent.click(addToFavoritesBtn);
+    const removeFromFavoritesBtn = await waitFor(() =>
+      getByText("Remove from Favorites")
+    );
+    fireEvent.click(removeFromFavoritesBtn);
+    const myFavoritesBtn = getByText("My Favorites (0)");
+    fireEvent.click(myFavoritesBtn);
+    expect(
+      getByText("You have no favorites yet. Favorite a listing!")
+    ).toBeInTheDocument();
+  });
 });
