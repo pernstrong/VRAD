@@ -1,6 +1,6 @@
 import React from "react";
 import { MemoryRouter as Router } from "react-router-dom";
-import { cleanup, render } from "@testing-library/react";
+import { cleanup, render, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Favorites from "./Favorites";
 
