@@ -16,18 +16,27 @@
 input {
     font-size: 3vh;
     display: block;
-    margin: 5% auto;    
+    margin: 5% auto;
+    border: none;
+    border-radius: .1em;
+    padding: .1em;    
+}
+
+::placeholder {
+    color: #0487D9;
 }
 
 select {
     font-size: 2vh;
     cursor: pointer;
     margin-top: 2%;
+    border: none;
+    color: #0487D9;
 }
 
 .signIn-btn {
-    border-radius: 10px;
-    display: block;
+    /* border-radius: 10px; */
+    /* display: block; */
     font-size: 3vh;
     margin: 5% auto;
     padding: 2% 3%;
@@ -38,4 +47,5 @@ select {
     margin-top: 2%;
     font-size: 3vh;
     color: #F23322;
+    font-weight: bold;
 }
