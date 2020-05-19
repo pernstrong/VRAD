@@ -6,6 +6,7 @@ import ListingsContainer from "../ListingsContainer/ListingsContainer";
 import Header from "../Header/Header";
 import ListingDetails from "../ListingDetails/ListingDetails";
 import Favorites from "../Favorites/Favorites";
+import { fetchAreasData, fetchListingsData } from "../../apiCalls/apiCalls";
 import { Route } from "react-router-dom";
 
 class App extends React.Component {
@@ -27,7 +28,7 @@ class App extends React.Component {
   };
 
   resetUser = () => {
-    this.setState({ user: "", favorites: []});
+    this.setState({ user: "", favorites: [] });
   };
 
   setCurrentArea = (area) => {
@@ -69,24 +70,13 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    fetch("https://vrad-api.herokuapp.com/api/v1/areas")
-      .then((response) => response.json())
-      .then((areaData) => {
-        const promises = areaData.areas.map((area) => {
-          let url = `https://vrad-api.herokuapp.com${area.details}`;
-          return fetch(url)
-            .then((response) => response.json())
-            .then((areaDetails) => areaDetails);
-        });
-        return Promise.all(promises);
-      })
+    fetchAreasData()
       .then((resolvedData) => this.setState({ areas: resolvedData }))
       .catch((err) => console.error(err));
   }
 
   fetchListings = () => {
-    fetch("https://vrad-api.herokuapp.com/api/v1/listings/")
-      .then((response) => response.json())
+    fetchListingsData()
       .then((data) => {
         const listingsInArea = data.listings.reduce(
           (listingObj, listing) => {

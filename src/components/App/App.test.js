@@ -1,10 +1,12 @@
 import React from "react";
 import { MemoryRouter as Router } from "react-router-dom";
-import { render, fireEvent, waitFor } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
+import { render, cleanup, fireEvent, waitFor } from "@testing-library/react";
+import "@testing-library/jest-dom/";
 import App from "./App";
 
 describe("App", () => {
+  afterEach(cleanup);
+
   it("should render Header", () => {
     const { getByText } = render(
       <Router>
@@ -140,25 +142,4 @@ describe("App", () => {
       getByText("You have no favorites yet. Favorite a listing!")
     ).toBeInTheDocument();
   });
-
-  // it("should return to AreasContainer on Return to Areas click", async () => {
-  //   const { getByText, getByLabelText, getByPlaceholderText } = render(
-  //     <Router>
-  //       <App />
-  //     </Router>
-  //   );
-  //   fireEvent.change(getByPlaceholderText("Your name"), {
-  //     target: { value: "Foxy Meatball" },
-  //   });
-  //   fireEvent.change(getByPlaceholderText("Your email"), {
-  //     target: { value: "foxymeatball@aol.com" },
-  //   });
-  //   fireEvent.change(getByLabelText("Why are you visiting?"), {
-  //     target: { value: "vacation" },
-  //   });
-  //   fireEvent.click(getByText("Sign In"));
-  //   fireEvent.click(getByText("My Favorites (0)"));
-  //   fireEvent.click(getByText("Return to Areas"));
-  //   expect(getByText("River North")).toBeInTheDocument();
-  // });
 });
