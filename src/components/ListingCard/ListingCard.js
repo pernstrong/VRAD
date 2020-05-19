@@ -7,8 +7,8 @@ const ListingCard = (props) => {
   const imagePath = `/images/${props.listing_id}_a.jpg`;
   return (
     <section className="listing-card">
-      <h2>{props.name}</h2>
-      <img className="listing-img" src={`${imagePath}`} alt={props.name} />
+      <h2 className="listing-name">{props.name}</h2>
+      <img className="listing-img-a" src={`${imagePath}`} alt={props.name} />
 
       <Link to={`/listings/${props.listing_id}`}>
         <button
