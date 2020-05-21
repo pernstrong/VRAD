@@ -102,7 +102,7 @@ class App extends React.Component {
 
       <Switch>
         <Route
-            path={`/listings/${this.state.currentListing}`}
+            path={`/VRAD/listings/${this.state.currentListing}`}
             render={() => {
               const currentListing = this.state.listings[
                 this.state.currentArea
@@ -121,7 +121,7 @@ class App extends React.Component {
           />
            <Route
             exact
-            path="/areas"
+            path="/VRAD/areas"
             render={() => {
               return (
                 <AreasContainer
@@ -133,7 +133,7 @@ class App extends React.Component {
         />
           <Route
           exact
-          path={`/areas/${this.state.currentArea}`}
+          path={`/VRAD/areas/${this.state.currentArea}`}
           render={() => {
             return (
               <ListingsContainer
@@ -148,7 +148,7 @@ class App extends React.Component {
           }}
         />
         <Route
-          path={"/favorites"}
+          path={"/VRAD/favorites"}
           render={() => {
             return (
               <Favorites
@@ -160,13 +160,13 @@ class App extends React.Component {
         />
         <Route
           exact
-          path="/"
+          path="/VRAD/"
           render={() => {
             return <SignIn setUser={this.setUser} />;
           }}
         />
         <Route
-          path="/error"
+          path="/VRAD/error"
           render={() => <Error />}
         />
         <Redirect to="/error"/>
