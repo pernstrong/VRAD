@@ -2,7 +2,7 @@
   "name": "vrad",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http:pernstrong.github.io/VRAD/",
+  "homepage": "http://pernstrong.github.io/VRAD/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/user-event": "^7.2.1",
