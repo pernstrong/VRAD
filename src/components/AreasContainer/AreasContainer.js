@@ -8,7 +8,7 @@ const AreasContainer = (props) => {
   const areas = props.areas.map((area) => {
     return (
       <Route
-        to={`/areas/${area.id}`}
+        to={`/VRAD/areas/${area.id}`}
         render={() => (
           <AreaCard {...area} setCurrentArea={props.setCurrentArea} />
         )}

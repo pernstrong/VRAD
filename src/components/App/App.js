@@ -169,7 +169,7 @@ class App extends React.Component {
           path="/VRAD/error"
           render={() => <Error />}
         />
-        <Redirect to="/error"/>
+        <Redirect to="/VRAD/error"/>
 
       </Switch>
        

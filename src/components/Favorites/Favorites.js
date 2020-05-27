@@ -18,7 +18,7 @@ const Favorites = (props) => {
     <section className="favorites-container">
     <div className="favorites-header">
       <h2>My Favorites</h2>
-      <Link to="/areas">
+      <Link to="/VRAD/areas">
         <button>Return to Areas</button>
       </Link>
       </div>

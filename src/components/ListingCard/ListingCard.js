@@ -10,7 +10,7 @@ const ListingCard = (props) => {
       <h2 className="listing-name">{props.name}</h2>
       <img className="listing-img-a" src={`${imagePath}`} alt={props.name} />
 
-      <Link to={`/listings/${props.listing_id}`}>
+      <Link to={`/VRAD/listings/${props.listing_id}`}>
         <button
           className="listing-details-btn"
           onClick={() => props.setCurrentListing(props.listing_id)}

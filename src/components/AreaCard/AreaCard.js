@@ -10,7 +10,7 @@ const AreaCard = (props) => {
       <h2 className="area-name">{name}</h2>
       <h3>{location}</h3>
       <p>{about}</p>
-      <Link to={`/areas/${id}`}>
+      <Link to={`/VRAD/areas/${id}`}>
         <button onClick={() => props.setCurrentArea(id)}>View Listings</button>
       </Link>
     </section>

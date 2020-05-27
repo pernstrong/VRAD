@@ -13,12 +13,12 @@ const Header = (props) => {
           <p>Trip Purpose: {props.user.purpose}</p>
         </section>
         <section className="btn-section">
-          <NavLink to="/favorites" activeClassName='my-favorites-btn-active'>
+          <NavLink to="/VRAD/favorites" activeClassName='my-favorites-btn-active'>
             <button className='my-favorites-btn'>
             My Favorites ({props.numberOfFavorites})
             </button>
           </NavLink>
-          <Link to="/">
+          <Link to="/VRAD/">
             <button onClick={() => props.resetUser()}>Sign Out</button>
           </Link>
         </section>
@@ -29,7 +29,7 @@ const Header = (props) => {
   return (
     <header>
       <section className='vrad'>
-      <Link className='accronym-link' to={!props.user.name ? '/' : "/areas"}>
+      <Link className='accronym-link' to={!props.user.name ? '/VRAD' : "/VRAD/areas"}>
         <h1>V.R.A.D.</h1>
       </Link>
         <p className="acronym">Vacation Rentals Around Denver</p>

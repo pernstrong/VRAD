@@ -70,7 +70,7 @@ class SignIn extends React.Component {
         <p className="error-message">
           {this.state.errorMsg}
         </p>
-        <Link to={this.checkInputs() ? "/areas" : "/"}>
+        <Link to={this.checkInputs() ? "/VRAD/areas" : "/VRAD/"}>
           <button className="signIn-btn" onClick={this.handleClick}>
             Sign In
           </button>
