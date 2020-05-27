@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/VRAD/static/css/main.91469d88.chunk.css",
-    "main.js": "/VRAD/static/js/main.25b597f4.chunk.js",
-    "main.js.map": "/VRAD/static/js/main.25b597f4.chunk.js.map",
+    "main.css": "/VRAD/static/css/main.7e655108.chunk.css",
+    "main.js": "/VRAD/static/js/main.dce11797.chunk.js",
+    "main.js.map": "/VRAD/static/js/main.dce11797.chunk.js.map",
     "runtime-main.js": "/VRAD/static/js/runtime-main.46ed73d9.js",
     "runtime-main.js.map": "/VRAD/static/js/runtime-main.46ed73d9.js.map",
     "static/js/2.714f3d08.chunk.js": "/VRAD/static/js/2.714f3d08.chunk.js",
     "static/js/2.714f3d08.chunk.js.map": "/VRAD/static/js/2.714f3d08.chunk.js.map",
     "index.html": "/VRAD/index.html",
-    "precache-manifest.97251e095069b9e8a894df8ba5502a3a.js": "/VRAD/precache-manifest.97251e095069b9e8a894df8ba5502a3a.js",
+    "precache-manifest.3cbe522175e00c48fe8982f46cd69e41.js": "/VRAD/precache-manifest.3cbe522175e00c48fe8982f46cd69e41.js",
     "service-worker.js": "/VRAD/service-worker.js",
-    "static/css/main.91469d88.chunk.css.map": "/VRAD/static/css/main.91469d88.chunk.css.map",
+    "static/css/main.7e655108.chunk.css.map": "/VRAD/static/css/main.7e655108.chunk.css.map",
     "static/js/2.714f3d08.chunk.js.LICENSE.txt": "/VRAD/static/js/2.714f3d08.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.46ed73d9.js",
     "static/js/2.714f3d08.chunk.js",
-    "static/css/main.91469d88.chunk.css",
-    "static/js/main.25b597f4.chunk.js"
+    "static/css/main.7e655108.chunk.css",
+    "static/js/main.dce11797.chunk.js"
   ]
 }
