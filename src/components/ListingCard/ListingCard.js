@@ -4,7 +4,7 @@ import "./ListingCard.css";
 import { Link } from "react-router-dom";
 
 const ListingCard = (props) => {
-  const imagePath = `/images/${props.listing_id}_a.jpg`;
+  const imagePath = `/VRAD/images/${props.listing_id}_a.jpg`;
   return (
     <section className="listing-card">
       <h2 className="listing-name">{props.name}</h2>

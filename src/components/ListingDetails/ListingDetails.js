@@ -4,9 +4,9 @@ import "./ListingDetails.css";
 
 const ListingDetails = (props) => {
   const { name, address, details } = props.details;
-  const imagePathA = `/images/${props.details.listing_id}_a.jpg`;
-  const imagePathB = `/images/${props.details.listing_id}_b.jpg`;
-  const imagePathC = `/images/${props.details.listing_id}_c.jpg`;
+  const imagePathA = `/VRAD/images/${props.details.listing_id}_a.jpg`;
+  const imagePathB = `/VRAD/images/${props.details.listing_id}_b.jpg`;
+  const imagePathC = `/VRAD/images/${props.details.listing_id}_c.jpg`;
 
   return (
     <section className="listing-details">
